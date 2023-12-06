@@ -282,5 +282,71 @@ var chart = new google.visualization.ScatterChart(document.getElementById('chart
 chart.draw(data, options);
 }
 </script>
+<h2>Conference presentation: How does the James Webb space telescope fundamentally impact the future of the space industry </h2>
+<script>
+ // Array of slide image URLs
+ var slideImages = ["slide 1 conference.jpg", "slide 2 conference.jpg", "slide 3 conference.jpg", "slide 4 conference.jpg", "slide 5 conference.jpg"];
+ var currentSlide = 0;
+ function showSlide() {
+  document.getElementById('slide').src = slideImages[currentSlide];
+ function nextSlide() {
+  currentSlide = (currentSlide +1) % slideImages.length;
+  showSlide();
+ }
+
+ function prevSlide() {
+  currentSlide = (currentSlide - 1 + slideImages.length) % slideImages.length;
+  showSlide();
+ }
+ // Function to show a specific slide based on the button clicked
+ function showSlideNumber(slideNumber) {
+   currentSlide = slideNumber - 1;
+   showSlide();
+ }
+  // Call showSlide() to display the first slide
+   showSlide();
+  </script>
+  <div id="slide-container".
+   <img id="slide" src="slide 1 conference.jpg" alt="Slide 1" style="width:100%; max-width:800px;">
+   <!-- Previous and Next buttons container -->
+   <div class="button-container">
+    <button class="button" onclick="prevSlide()">Previous</button>
+    <button class="button" onclick="nextSlide()">Next</button>
+   </div>
+
+   <!--Slide number buttons container -->
+   <div class="slide-number-container">
+    <button class="button" onclick="ShowSlideNumber(1)">1</button>
+    <button class="button" onclick="ShowSlideNumber(2)">2</button>
+    <button class="button" onclick="ShowSlideNumber(3)">3</button>
+    <button class="button" onclick="ShowSlideNumber(4)">4</button>
+    <button class="button" onclick="ShowSlideNumber(5)">5</button>
+   </div>
+   <style>
+    /* Style to center the image */
+    #slide-container {
+     text-align: center;
+     position: relative;
+    }
+    /* Style for the buttons */
+    .button-container {
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     margin-bottom: -100px; /* Add some margin between the image and buttons */
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color:white;
+      border:none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 5px; /* Add some margin between the slide number buttons and the image */
+    }
   
-  </html>
+   </style>
+</html>
