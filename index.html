@@ -290,7 +290,7 @@ chart.draw(data, options);
  function showSlide() {
   document.getElementById('slide').src = slideImages[currentSlide];
  function nextSlide() {
-  currentSlide = (currentSlide +1) % slideImages.length;
+  currentSlide = (currentSlide + 1) % slideImages.length;
   showSlide();
  }
 
@@ -347,6 +347,13 @@ chart.draw(data, options);
       cursor: pointer;
       margin: 0 5px; /* Add some margin between the slide number buttons and the image */
     }
-  
+
+    .slide-number-container {
+     position: absolute;
+     bottom: 0;
+     left:50%;
+     transform: translateX(-50%);
+     margin-bottom: -50px;
+    }
    </style>
 </html>
