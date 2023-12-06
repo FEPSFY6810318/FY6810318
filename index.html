@@ -292,7 +292,7 @@ chart.draw(data, options);
   var currentSlide = 0;
 
   function showSlide() {
-   document.getElementById('slide').src = slideImages[currentSlide];
+    document.getElementById('slide').src = slideImages[currentSlide];
   }
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slideImages.length;
@@ -300,7 +300,7 @@ chart.draw(data, options);
   }
 
   function prevSlide() {
-  currentSlide = (currentSlide + 1) % slideImages.length;
+  currentSlide = (currentSlide -1 + slideImages.length) % slideImages.length;
    showSlide();
   }
   // Function to show a specific slide based on the button clicked
@@ -346,8 +346,8 @@ chart.draw(data, options);
      .button {
        padding: 10px 20px;
        background-color: #4CAF50;
-       color:white;
-       border:none;
+       color: white;
+       border: none;
        border-radius: 5px;
        font-size: 16px;
        cursor: pointer;
@@ -357,7 +357,7 @@ chart.draw(data, options);
      .slide-number-container {
       position: absolute;
       bottom: 0;
-      left:50%;
+      left: 50%;
       transform: translateX(-50%);
       margin-bottom: -50px;
      }
